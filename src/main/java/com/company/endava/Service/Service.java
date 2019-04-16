@@ -59,9 +59,7 @@ public class Service implements ServiceInterface {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.add("cookie", sessionid.getName() + "=" + sessionid.getValue());
         HttpEntity<String> entity = new HttpEntity<String>(headers);
-        loggedIn = restTemplate.exchange(adress + "/rest/auth/1/session", HttpMethod.GET, entity, LoggedIn.class).getBody();
         Object ob = restTemplate.exchange(adress + "/rest/auth/1/session", HttpMethod.GET, entity, Object.class);
-        System.err.println(loggedIn);
         return new ResponseEntity(ob, HttpStatus.OK);
     }
 
@@ -73,10 +71,8 @@ public class Service implements ServiceInterface {
         Map<String, String> body = new HashMap<>();
         HttpEntity entity = new HttpEntity<> (body,headers);
         String uri=adress+"/rest/api/2/issue/"+id;
-        issue issue = restTemplate.exchange(uri, HttpMethod.GET, entity, com.company.endava.Models.Issue.issue.class).getBody();
-        System.err.println(issue);
         Object result = restTemplate.exchange(uri, HttpMethod.GET, entity,Object.class);
-        return new ResponseEntity(issue,HttpStatus.OK);
+        return new ResponseEntity(result,HttpStatus.OK);
     }
 
     @Override
@@ -86,9 +82,7 @@ public class Service implements ServiceInterface {
         headers.add("cookie",sessionid.getName() + "=" + sessionid.getValue());
         String uri = adress + "/rest/api/2/issue";
         HttpEntity<String> request = new HttpEntity(issue, headers);
-        String result = restTemplate.exchange(uri, HttpMethod.POST, request, String.class).getBody();
         Object result1 = restTemplate.exchange(uri, HttpMethod.POST, request, Object.class);
-        System.err.println(result);
         return new ResponseEntity(result1,HttpStatus.OK);
     }
 
@@ -99,9 +93,7 @@ public class Service implements ServiceInterface {
         headers.add("cookie",sessionid.getName() + "=" + sessionid.getValue());
         String uri = adress + "/rest/api/2/issue/"+id;
         HttpEntity<String> request = new HttpEntity(issue, headers);
-        String result = restTemplate.exchange(uri, HttpMethod.PUT, request, String.class).getBody();
         Object result1 = restTemplate.exchange(uri,HttpMethod.PUT,request,Object.class);
-        System.err.println(result);
         return new ResponseEntity(result1,HttpStatus.OK);
     }
 

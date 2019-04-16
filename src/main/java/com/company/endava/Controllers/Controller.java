@@ -5,6 +5,7 @@ import com.company.endava.Service.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,21 +27,19 @@ public class Controller {
     public ResponseEntity Current()
     {return service.getCurrentUser();}
 
-    @GetMapping("/get")
-    public ResponseEntity Get()
-    {return service.getIssue("IIA-5266");}
+    @GetMapping("/get/{id}")
+    public ResponseEntity Get(@PathVariable String id)
+    {return service.getIssue(id);}
 
     @GetMapping("/create")
     public ResponseEntity Create()
     {return service.createIssue(issue);}
 
-    @GetMapping("/update")
-    public ResponseEntity Update()
-    {return service.updateIssue(issue,"IIA-5266");}
+    @GetMapping("/update/{id}")
+    public ResponseEntity Update(@PathVariable String id)
+    {return service.updateIssue(issue,id);}
 
-    @GetMapping("/delete")
-    public ResponseEntity Delete()
-    {
-        return service.deleteIssue("IIA-5266");
-    }
+    @GetMapping("/delete/{id}")
+    public ResponseEntity Delete(@PathVariable String id)
+    {return service.deleteIssue(id);}
 }
