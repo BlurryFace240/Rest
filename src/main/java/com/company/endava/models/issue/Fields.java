@@ -1,4 +1,4 @@
-package com.company.endava.Models.Issue;
+package com.company.endava.models.issue;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class fields {
-    private com.company.endava.Models.Issue.project project;
+public class Fields {
+    private Project project;
     private String summary;
     private String description;
-    private issuetype issuetype;
+    private IssueType issuetype;
     private String[] labels;
-    private com.company.endava.Models.Issue.assignee assignee;
+    private Assignee assignee;
 }

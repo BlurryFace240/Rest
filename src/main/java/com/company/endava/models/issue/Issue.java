@@ -1,4 +1,4 @@
-package com.company.endava.Models.Issue;
+package com.company.endava.models.issue;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class project {
-    private String key;
+public class Issue {
+    private Fields fields;
 }

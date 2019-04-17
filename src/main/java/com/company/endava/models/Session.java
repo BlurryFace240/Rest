@@ -1,4 +1,4 @@
-package com.company.endava.Models.Issue;
+package com.company.endava.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class issuetype {
-    private int id;
+public class Session {
+    private String name;
+    private String value;
 }

@@ -1,4 +1,4 @@
-package com.company.endava.Models;
+package com.company.endava.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

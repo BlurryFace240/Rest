@@ -1,6 +1,6 @@
 package com.company.endava;
 
-import com.company.endava.Models.Issue.issue;
+import com.company.endava.models.issue.Issue;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,6 +18,6 @@ public class EndavaApplication {
     {return new RestTemplate();}
 
     @Bean
-    public issue getIssue()
-    {return new issue();}
+    public Issue getIssue()
+    {return new Issue();}
 }
